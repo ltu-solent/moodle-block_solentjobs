@@ -1,0 +1,64 @@
+.div-jobs span{	 
+	font-family: Arial, verdana, sans-serif; 	
+	word-wrap: break-word;
+    text-indent: -1.7em;
+    padding-left: 1.4em;
+	padding-bottom: 5px;
+    display: block;
+}
+
+img.smallicon.navicon{
+	padding-right: 5px;
+}
+
+#button-jobs {	
+	background-color: #cc3e2d; /* Green */
+    border: 2px solid #cc3e2d;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	border-radius: 4px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#button-jobs:hover {
+   	text-decoration: none;
+	box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 10px 30px 0 rgba(0,0,0,0.19);
+}
+
+#button-jobs:visited,  #button-jobs:active{
+	 color: #fff;
+	 text-decoration: none;
+} 
+
+.list-arrow{
+	padding-right:1em;
+}
+
+.top-five{
+	color: #999; 
+	font-size:1.2em; 
+	font-weight:bold;     
+	padding-top: 4px;
+	
+}
+
+.jobs-listing-link{
+	/* color: #333; */
+	text-decoration: none;
+}
+
+#div-button-jobs{
+	padding-top: 10px;
+	text-align:center;
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+#jobs-footer{
+	padding-top:10px;
+}

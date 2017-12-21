@@ -14,23 +14,27 @@ class block_solentjobs extends block_base {
 	$current_url = basename($_SERVER['REQUEST_URI']);
 	$url = '';
 	$cat_id = '';
+	$this->content =  new stdClass;
 	
 	if(ISSET($_POST['school'])){
 		$cat_id = $_POST['school'];
 	}else{
-		$category = $DB->get_record_sql('	SELECT idnumber, name from {course_categories} 
-											WHERE id = (
-													SELECT cc.parent FROM {course_categories} cc
-													JOIN {course} c ON c.category = cc.id
-													where c.id = ?)', array($COURSE->id)); 	
-		if($category){
-			$cat_id = $category->idnumber;		
+		if($COURSE->id == 6181 || $COURSE->id == 24233){
+			$cat_id = 'PJ';
+		}else{
+			
+			$category = $DB->get_record_sql('	SELECT idnumber, name from {course_categories} 
+												WHERE id = (
+														SELECT cc.parent FROM {course_categories} cc
+														JOIN {course} c ON c.category = cc.id
+														where c.id = ?)', array($COURSE->id)); 	
+			if($category){
+				$cat_id = $category->idnumber;		
+			}
 		}
 	}	
-
-	$this->content =  new stdClass;
 	
-	$this->content->text   = "<p class='top-five'>Latest jobs in:</p>";
+	$this->content->text   .= "<p class='top-five'>Latest jobs in:</p>";
 if($current_url == 'my'){	
 	$this->content->text .= "<form action='"; $this->content->text .= $_SERVER['PHP_SELF']; $this->content->text .=	"' method='post'><select id='school' name='school' style='width:100%;' onchange='submit()'>";	
 }else{
@@ -44,6 +48,7 @@ if($current_url == 'my'){
 	$this->content->text .=	"<option value='SSHSS'"; if($cat_id == 'SSHSS'){$this->content->text .=   "selected='selected'";} $this->content->text .= ">Sport, Health and Social Sciences</option>";
 	$this->content->text .=	"<option value='CJ'"; if(($cat_id == 'CJ' || $cat_id == '')){$this->content->text .=  "selected='selected'";} $this->content->text .= ">Campus Jobs</option>";
 	$this->content->text .=	"<option value='LJ'"; if($cat_id == 'LJ'){$this->content->text .=  "selected='selected'";} $this->content->text .= ">Latest Jobs</option>";
+	$this->content->text .=	"<option value='PJ'"; if($cat_id == 'PJ'){$this->content->text .=  "selected='selected'";} $this->content->text .= ">Placement Jobs</option>";
 	$this->content->text .=	"</select></form>";
 	
 	if($cat_id == 'SADF'){ //art design and fashion
@@ -64,6 +69,8 @@ if($current_url == 'my'){
 		$url = "http://graduatejobs.solent.ac.uk/widget/jobs/;i=1";		
 	}elseif($cat_id == 'LJ'){
 		$url = "http://graduatejobs.solent.ac.uk/widget/jobs/;i=2";		
+	}elseif($cat_id == 'PJ'){
+		$url = "http://graduatejobs.solent.ac.uk/widget/jobs/;i=9";
 	}else{ //campus jobs
 		$url = "http://graduatejobs.solent.ac.uk/widget/jobs/;i=1";	
 	}

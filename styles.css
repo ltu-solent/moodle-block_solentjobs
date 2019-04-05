@@ -1,5 +1,5 @@
-.div-jobs span{	 
-	font-family: Arial, verdana, sans-serif; 	
+.div-jobs span{
+	font-family: Arial, verdana, sans-serif;
 	word-wrap: break-word;
     text-indent: -1.7em;
     padding-left: 1.4em;
@@ -11,7 +11,11 @@ img.smallicon.navicon{
 	padding-right: 5px;
 }
 
-#button-jobs {	
+.solentjobs_img {
+	max-width: 100%;
+}
+
+#button-jobs {
 	background-color: #cc3e2d; /* Green */
     border: 2px solid #cc3e2d;
     color: white;
@@ -33,18 +37,18 @@ img.smallicon.navicon{
 #button-jobs:visited,  #button-jobs:active{
 	 color: #fff;
 	 text-decoration: none;
-} 
+}
 
 .list-arrow{
 	padding-right:1em;
 }
 
 .top-five{
-	color: #999; 
-	font-size:1.2em; 
-	font-weight:bold;     
+	color: #999;
+	font-size:1.2em;
+	font-weight:bold;
 	padding-top: 4px;
-	
+
 }
 
 .jobs-listing-link{

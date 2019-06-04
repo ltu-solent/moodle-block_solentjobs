@@ -99,7 +99,8 @@ class block_solentjobs extends block_base {
 // 	}
 
 	//$this->content->text .=	"<div id='div-button-jobs'><a id='button-jobs' href='http://graduatejobs.solent.ac.uk' target='_blank'>Solent Jobs Homepage</a></div>";
-  $this->content->text .=	"<p><img class='solentjobs_img' src='/blocks/solentjobs/pix/solent-futures-employers.jpg'></p>";
+  $this->content =  new stdClass;
+  $this->content->text =	"<p><img class='solentjobs_img' src='/blocks/solentjobs/pix/solent-futures-employers.jpg'></p>";
 	$this->content->text .=	"<div id='jobs-footer'><a href='https://solentfutures.careercentre.me/u/vqm4f6rg' target='_blank'>Solent Jobs Homepage...</a></div>";
 
     return $this->content;
